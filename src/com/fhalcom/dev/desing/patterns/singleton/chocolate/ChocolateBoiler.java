@@ -16,9 +16,33 @@ public class ChocolateBoiler {
     }
 
     public void fill(){
-        if()
+        if(isEmpty())
+        {
+            this.empty = false;
+            this.boiled = false;
+        }
+        System.out.println("FILL empty:" + empty + " ==> " + "bioler:"+boiled);
     }
 
-    public boolean isEmpty(){return this.empty;};
+    public void boil(){
+        if(!isEmpty() && !isBoiled())
+        {
+            boiled = true;
+        }
+        System.out.println("BOIL empty:" + empty + " ==> " + "bioler:"+boiled);
+    }
+
+    public void drain(){
+        if(!isEmpty() && isBoiled())
+        {
+            empty = true;
+            boiled = false;
+        }
+        System.out.println("DRAIN empty:" + empty + " ==> " + "bioler:"+boiled);
+    }
+
+    public boolean isEmpty(){return this.empty;}
+    public boolean isBoiled(){return this.boiled;}
+
 
 }
